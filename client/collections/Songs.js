@@ -9,13 +9,10 @@ var Songs = Backbone.Collection.extend({
       url: 'https://api.parse.com/1/classes/songs',
       type: 'GET',
       success: function(data) {
-        console.log('CONTEXT',context);
         _.each(data, function(song) {
-          
-          context.set(song);
+          context.add(song);
         });
-        context.trigger('changedSong', context);
-        console.log(data);
+        context.trigger('success', context);
         console.log('Successfully fetched songs');
       },
       error: function(error) {
