@@ -6,9 +6,10 @@ var Songs = Backbone.Collection.extend({
   initialize: function() {
     var context = this;
     $.ajax({
-      url: 'https://api.parse.com/1/classes/songs',
+      url: 'https://api.parse.com/1/classes/songs/',
       type: 'GET',
       success: function(data) {
+        console.log(data)
         _.each(data, function(song) {
           context.add(song);
         });
