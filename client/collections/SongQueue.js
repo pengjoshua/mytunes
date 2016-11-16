@@ -29,7 +29,9 @@ var SongQueue = Backbone.Collection.extend({
     });
 
     this.on('ended', function() {
+      console.log(context);
       context.shift();
+      // context.model.prototype.addPlay();
       if (this.models.length > 0) {
         context.playFirst();
       }
