@@ -4,7 +4,7 @@ var SongQueueEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td>(<%= artist %>) <%= title %></td>'),
+  template: _.template('<td>(<%= artist %>) <%= title %> </td>'),
   // removed <td></td> separating artist from title
 
   events: {
